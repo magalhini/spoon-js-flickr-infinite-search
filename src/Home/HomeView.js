@@ -50,7 +50,7 @@ define([
         scrollCheck: function () {
             var contentHeight = this._el.height(),
                 pageHeight    = document.documentElement.clientHeight,
-                trigger       = 100,
+                trigger       = 100, // trigger at 100px from the bottom
                 scrollPos     = window.scrollY;
 
             if (!this._isLoading && contentHeight - pageHeight - scrollPos < trigger) {

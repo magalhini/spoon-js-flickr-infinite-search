@@ -30,7 +30,7 @@ define([
 
             // Listening for the View to request more data.
             // It will send the page it needs to be fetched.
-            this.on('flickr', function (page) {
+            this._view.on('flickr', function (page) {
                 console.log('Requesting page', page);
                 this._page = page;
                 this.getData(page);
@@ -43,7 +43,6 @@ define([
          * @public
          */
         getData: function () {
-            console.log('--', api);
             $.when(this._flickr.search('istanbul'))
                 .done(function (data) {
                     this._view.render({
