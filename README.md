@@ -1,9 +1,3 @@
-# flickr
+## Flickr Infinite Scroll using spoon.js
 
-Do not forget to complete the README.
-
-# Installation
-
-- Install [node](http://nodejs.org)
-- `npm install spoonjs -g`
-- `spoon project install`
+Implementation of a basic Flickr infinite scroll system using the spoon.js framework.
