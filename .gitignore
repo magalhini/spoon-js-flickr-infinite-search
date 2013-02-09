@@ -1,0 +1,18 @@
+# Node #
+######################
+node_modules
+npm-debug.*
+
+# Bower #
+######################
+/vendor
+
+# Project specific #
+######################
+/web/root
+/web/prod
+/web/staging
+/tmp
+
+# Other #
+.DS_Store

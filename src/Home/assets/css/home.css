@@ -1,0 +1,7 @@
+.flickr {
+    min-height: 800px;
+}
+
+.flickr img {
+    height: 230px;
+}
