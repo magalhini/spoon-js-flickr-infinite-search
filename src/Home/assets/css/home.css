@@ -1,7 +1,25 @@
 .flickr {
-    min-height: 800px;
+    overflow: hidden;
 }
 
 .flickr img {
-    height: 230px;
+    height: 260px;
+}
+
+.flickr .item {
+    float: left;
+    width: 25%;
+    padding: 1em;
+}
+
+.flickr .item .img {
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+body, html, div, img, span, a {
+    margin: 0;
+    padding: 0;
 }

@@ -43,7 +43,7 @@ define([
          * @public
          */
         getData: function () {
-            $.when(this._flickr.search('istanbul'))
+            $.when(this._flickr.search('turkey'))
                 .done(function (data) {
                     this._view.render({
                         data: data

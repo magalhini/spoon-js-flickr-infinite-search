@@ -17,6 +17,11 @@ define([
         _template: Handlebars.compile(tmpl),
         _page: 1,
 
+        initialize: function () {
+            this.$super();
+            $(window).on('scroll', this.scrollCheck);
+        },
+
         /**
          * Renders the view with the data.
          * @param  {Object} data Flickr results.
@@ -30,8 +35,6 @@ define([
             // we need for it to be appended.
             var template = this._template(data.data.photos);
             this._el.append(template);
-
-            $(window).on('scroll', this.scrollCheck);
         },
 
         /**
