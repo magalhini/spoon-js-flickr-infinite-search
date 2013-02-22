@@ -6,7 +6,8 @@ define(function () {
     // This is actually not necessary if you don't have routes associated to states
     // But it is a good practice to do so, because it gives an overview of all the application states
     return {
-        home: '/'
+        home: '/',
+        homeId: '/{id}'
         /*shop: {
             $pattern: '/shop',
             index: '/',

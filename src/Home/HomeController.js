@@ -10,15 +10,25 @@ define([
     return spoon.Controller.extend({
         $name: 'HomeController',
 
+        _query: 'turkey',
         _view: null,
         _flickr: null,
         _page: 1,
 
+        _defaultState: 'home',
+        _states: {
+            'home(id)': 'indexState'
+        },
+
+        ////////////////////////////////////////////////////////////
+
         /**
-         * Constructor.
+         * The default state, which receives the query value.
+         * @param {Object} state The state object.
+         * @return {}
          */
-        initialize: function () {
-            this.$super();
+        indexState: function (state) {
+            this._query = state.id;
 
             this._view = this._link(new HomeView());
             this._view.appendTo('#content');
@@ -43,7 +53,7 @@ define([
          * @public
          */
         getData: function () {
-            $.when(this._flickr.search('istanbul'))
+            $.when(this._flickr.search(this._query))
                 .done(function (data) {
                     this._view.render({
                         data: data
@@ -53,6 +63,8 @@ define([
 
                 }.$bind(this))
                 .fail(function (err) { console.log('failure', err); });
+
+            return this;
         },
 
         /**
@@ -88,13 +100,6 @@ define([
                     return deff.promise();
                 }.$bind(this)
             };
-        },
-
-        /**
-         * {@inheritDoc}
-         */
-        _onDestroy: function () {
-            this.$super();
         }
     });
 });

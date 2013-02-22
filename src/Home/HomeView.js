@@ -3,7 +3,8 @@ define([
     'handlebars',
     'jquery',
     'text!./assets/tmpl/home.html',
-    'css!./assets/css/home.css'
+    'css!./assets/css/home.css',
+    'isotope'
 ], function (spoon, Handlebars, $, tmpl) {
 
     'use strict';

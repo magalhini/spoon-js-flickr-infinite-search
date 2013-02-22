@@ -12,7 +12,8 @@ define([
 
         _defaultState: 'home',
         _states: {
-            'home': '_homeState'
+            'home': '_homeState',
+            'homeId(id)': '_searchQuery'
         },
 
         _content: null,
@@ -33,6 +34,10 @@ define([
                 .render();
         },
 
+        _searchQuery: function (state) {
+            this._homeState(state);
+        },
+
         /**
          * Home state handler.
          *
@@ -40,7 +45,7 @@ define([
          */
         _homeState: function (state) {
             this._destroyContent();
-            this._content = this._link(new HomeController());
+            this._content = this._link(new HomeController(state));
             this._content.setState(state);
         },
 

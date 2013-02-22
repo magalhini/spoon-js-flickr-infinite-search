@@ -24,6 +24,8 @@ requirejs.config({
         'app-config': '../app/config/config_dev',
         'api': '../app/config/flickr_key',
 
+        'isotope': '../vendor/jquery/jquery.isotope.min',
+
         // Services
         'services/broadcaster': '../vendor/spoon.js/src/core/Broadcaster/BroadcasterFactory',
         'services/address': '../vendor/spoon.js/src/core/Address/AddressFactory',
@@ -32,6 +34,11 @@ requirejs.config({
     shim: {
         'handlebars': {
             exports: 'Handlebars'
+        },
+
+        'isotope': {
+            deps: ['jquery'],
+            exports: 'jquery'
         }
     },
     packages: [
